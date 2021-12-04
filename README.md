@@ -54,6 +54,7 @@ In this example, there are 7 measurements that are larger than the previous meas
 *How many measurements are larger than the previous measurement?*
 <details>
   <summary>Solution</summary>
+  
   ```
   1167
   ```
@@ -96,6 +97,7 @@ In this example, there are `5` sums that are larger than the previous sum.
 *Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?*
 <details>
   <summary>Solution</summary>
+  
   ```
   1130
   ```
@@ -136,6 +138,7 @@ After following these instructions, you would have a horizontal position of `15`
 *Calculate the horizontal position and depth you would have after following the planned course. What do you get if you multiply your final horizontal position by your final depth?*
 <details>
   <summary>Solution</summary>
+  
   ```
   1459206
   ```
@@ -167,6 +170,7 @@ After following these new instructions, you would have a horizontal position of 
 *Using this new interpretation of the commands, calculate the horizontal position and depth you would have after following the planned course. What do you get if you multiply your final horizontal position by your final depth?*
 <details>
   <summary>Solution</summary>
+  
   ```
   1320534480
   ```
