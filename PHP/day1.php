@@ -4,7 +4,7 @@
  * Created: 12/3/2021 12:47 PM
  * /**/
 function part1() {
-    $input = fopen(__DIR__ . "/inputs/day1.txt", 'r') or die("Unable to open file...");
+    $input = fopen(__DIR__ . "/../inputs/day1.txt", 'r') or die("Unable to open file...");
     $previousLine = null;
     $increaseCount = 0;
     while (($line = fgets($input, 2024)) !== false) {

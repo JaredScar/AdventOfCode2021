@@ -4,7 +4,7 @@
  * Created: 12/3/2021 4:20 PM
  * /**/
 function part1() {
-    $input = fopen(__DIR__ . "/inputs/day2.txt", 'r') or die("Unable to open file...");
+    $input = fopen(__DIR__ . "/../inputs/day2.txt", 'r') or die("Unable to open file...");
     $data = ['horizontal' => 0, 'depth' => 0];
     while (($line = fgets($input, 2024)) !== false) {
         $exp = explode(" ", $line);
