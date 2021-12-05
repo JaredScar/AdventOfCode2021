@@ -1,7 +1,4 @@
 <?php
-function printGraphDrawing($arr) {
-    //
-}
 function part1() {
     $input = fopen(__DIR__ . "/../inputs/day5.txt", 'r') or die("Unable to open file...");
     $grid = array();
