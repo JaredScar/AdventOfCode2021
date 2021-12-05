@@ -1,6 +1,9 @@
 <?php
+function printGraphDrawing($arr) {
+    //
+}
 function part1() {
-    $input = fopen(__DIR__ . "/../inputs/day5_test.txt", 'r') or die("Unable to open file...");
+    $input = fopen(__DIR__ . "/../inputs/day5.txt", 'r') or die("Unable to open file...");
     $grid = array();
     while (($line = fgets($input, 2024)) !== false) {
         $pointsStr = explode(" -> ", $line);
@@ -14,23 +17,30 @@ function part1() {
         $lowX = ($x1 > $x2) ? $x2 : $x1; // Lowest X
         $grY = ($y1 > $y2) ? $y1 : $y2; // Greatest Y
         $lowY = ($y1 > $y2) ? $y2 : $y1; // Lowest Y
-        while ($lowX <= $grX) {
-            echo "$lowX, $lowY<br />";
+        if ($x1 == $x2) {
             while ($lowY <= $grY) {
-                if ($lowY >= $grY) break;
-                if (isset($grid[$lowX])) {
-                    if (isset($grid[$lowX][$lowY]))
-                        $grid[$lowX][$lowY] += 1;
+                if (isset($grid[$x1]))
+                    if (isset($grid[$x1][$lowY]))
+                        $grid[$x1][$lowY] += 1;
                     else
-                        $grid[$lowX][$lowY] = 1;
-                } else {
-                    $grid[$lowX][$lowY] = 1;
-                }
+                        $grid[$x1][$lowY] = 1;
+                else
+                    $grid[$x1][$lowY] = 1;
                 $lowY++;
             }
-            $lowX++;
         }
-        echo "<br /><br />";
+        if ($y1 == $y2) {
+            while ($lowX <= $grX) {
+                if (isset($grid[$lowX]))
+                    if (isset($grid[$lowX][$y1]))
+                        $grid[$lowX][$y1] += 1;
+                    else
+                        $grid[$lowX][$y1] = 1;
+                else
+                    $grid[$lowX][$y1] = 1;
+                $lowX++;
+            }
+        }
     }
     $intersects = 0;
     foreach ($grid as $x => $yes) {

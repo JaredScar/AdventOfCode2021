@@ -400,6 +400,7 @@ To avoid the most dangerous areas, you need to determine the number of points wh
   <summary>Solution</summary>
   
   ```
+6007
   ```
 </details>
 
