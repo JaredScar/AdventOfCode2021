@@ -19,9 +19,22 @@ function part1() {
 }
 function part2() {
     $input = fopen(__DIR__ . "/../inputs/day7.txt", 'r') or die("Unable to open file...");
-    while (($line = fgets($input, 2024)) !== false) {
-        //
+    $positions = [];
+    while (($line = fgets($input, 4024)) !== false) {
+        $positions = array_map('intval', explode(",", $line));
     }
+    $min = min($positions);
+    $max = max($positions);
+    $fuel = PHP_INT_MAX;
+    for ($i = $min; $i <= $max; $i++) {
+        $sum = 0;
+        foreach ($positions as $position) {
+            $steps = abs($position - $i);
+            $sum += $steps * ($steps + 1) / 2;
+        }
+        $fuel = min($fuel, $sum);
+    }
+    return $fuel;
 }
 echo "<h1>Part 1</h1><pre>";
 echo part1();
