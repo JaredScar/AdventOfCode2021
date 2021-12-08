@@ -557,4 +557,5 @@ This costs a total of `37` fuel. This is the cheapest possible outcome; more exp
   ```
   ```
 </details>
+
 #### Part 2

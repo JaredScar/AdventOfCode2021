@@ -3,9 +3,19 @@ function part1() {
     $input = fopen(__DIR__ . "/../inputs/day7_test.txt", 'r') or die("Unable to open file...");
     $positions = [];
     while (($line = fgets($input, 2024)) !== false) {
-        $positions = explode(",", $line);
+        $positions = array_map('intval', explode(",", $line));
     }
-
+    $min = min($positions);
+    $max = max($positions);
+    $fuel = PHP_INT_MAX;
+    for ($i = $min; $i <= $max; $i++) {
+        $sum = 0;
+        foreach ($positions as $position) {
+            $sum += abs($position - $i);
+        }
+            $fuel = min($fuel, $sum);
+    }
+    return $fuel;
 }
 function part2() {
     $input = fopen(__DIR__ . "/../inputs/day7.txt", 'r') or die("Unable to open file...");
